@@ -1,0 +1,17 @@
+{
+  "name": "Use yr ears",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Find the record whose review you're reading on Rdio.",
+  "browser_action": {
+    "default_icon": "img/icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "tabs", "http://www.pitchfork.com/*", "http://pitchfork.com/*"
+  ],
+  "content_scripts": [{
+      "matches": ["http://www.pitchfork.com/*", "http://pitchfork.com/*"],
+      "js": ["contentscript.js"]
+  }]
+}
