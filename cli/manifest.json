@@ -3,6 +3,9 @@
   "version": "1.0",
   "manifest_version": 2,
   "description": "Find the record whose review you're reading on Rdio.",
+  "background": {
+    "page": "background.html"
+  },
   "browser_action": {
     "default_icon": "img/icon.png",
     "default_popup": "popup.html"
