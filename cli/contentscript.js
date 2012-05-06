@@ -15,8 +15,8 @@ function album() {
 chrome.extension.onRequest.addListener (
     function (request, sender, sendResponse) {
         var ar, al, m, h, a;
-        console.log('doing')
         if (request.service === 'rdio') {
+            console.log('doing')
             ar = artist();
             al = album();
             console.log(al + ar)

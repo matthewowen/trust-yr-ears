@@ -12,7 +12,11 @@ def res(query):
     r = client.request('http://api.rdio.com/1/', 'POST', urllib.urlencode({'method': 'search', 'query': query, 'types': 'Album', 'count': '1'}))
     d = json.loads(r[1])
     if d['status'] == 'ok' and d['result']['number_results'] > 0:
-        return d['result']['results'][0]['key']
+
+        resp = make_response(d['result']['results'][0]['embedUrl'])
+        resp.headers['Access-Control-Allow-Origin'] = '*'
+        return resp
+
 
 if app.config['DEBUG']:
     from werkzeug import SharedDataMiddleware
